@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
+{
+    IBOutlet UILabel *lblMensaje;
+    IBOutlet UITextField *texto;
+}
+
+@property (nonatomic, retain) UILabel *lblMensaje;
+@property (nonatomic,retain) UITextField *texto;
+
+-(IBAction)click1:(id)sender;
+-(IBAction)click2:(id)sender;
 
 @end

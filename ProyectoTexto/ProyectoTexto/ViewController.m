@@ -13,11 +13,29 @@
 @end
 
 @implementation ViewController
+@synthesize lblMensaje,texto;
 
+-(IBAction)click1:(id)sender
+{
+ lblMensaje.text = @"hola mundo";
+}
+-(IBAction)click2:(id)sender
+{
+    lblMensaje.text = texto.text;
+    [texto resignFirstResponder];
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [texto resignFirstResponder];
+    return YES;
+
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.texto.delegate = self ;
 }
 
 - (void)didReceiveMemoryWarning
